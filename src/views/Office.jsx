@@ -6,7 +6,7 @@ const Office = () => {
         <div className="flex uppercase text-left "></div>
         <div className="grid grid-cols-1 gap-3 lg:col-span-3">
           <p className="text-left font-[supreme-book]">
-            Max Núñez Arquitectos es una oficina de arquitectura ubicada en
+            Schwember Garcia-Huidobro Arquitectos es una oficina de arquitectura ubicada en
             Santiago de Chile formada el año 2010. Ha desarrollando diversos
             proyectos públicos y privados tanto en Chile como en el extranjero.
             Su trabajo ha sido reconocido con los premios Design Vanguard 2017
@@ -20,7 +20,7 @@ const Office = () => {
             (Japón), Mark (Holanda), Wallpaper (Inglaterra), Architectural
             Record (EEUU), PLOT (Argentina), 2G (España), Baumeister (Alemania),
             Interni (Italia), y ha sido motivo de la edición de dos
-            publicaciones monográficas: &quot;Max Núñez Arquitectos, Pista de
+            publicaciones monográficas: &quot;Schwember Garcia-Huidobro Arquitectos, Pista de
             Despegue&quot;, de Editorial Constructo, Chile, 2015, y &quot;Max
             Núñez Arquitectos, Colección de Ideas&quot;, de Editorial ARQ,
             Chile, 2018.
@@ -116,11 +116,11 @@ const Office = () => {
                     Universidad de Buenos Aires. Desde el año 2006 vive y
                     trabaja en Chile, de forma independiente y colaborando con
                     varias oficinas de Arquitectura, entre otras Guillermo Acuña
-                    Arquitectos Asociados y Max Núñez Arquitectos. Actualmente
+                    Arquitectos Asociados y Schwember Garcia-Huidobro Arquitectos. Actualmente
                     es profesor de Taller IV de la Universidad San Sebastián y
                     ha sido profesor de Teoría, Historia y Crítica de la
                     Arquitectura en la Universidad Católica de Chile. Desde 2018
-                    es socio de Max Núñez Arquitectos.
+                    es socio de Schwember Garcia-Huidobro Arquitectos.
                   </p>
                 </div>
                 <div className="mt-6">

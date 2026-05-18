@@ -88,14 +88,14 @@ const Conferences = () => {
           <hr className="col-span-6 w-full h-[1px] bg-[#adadad] border-0 rounded  mt-1" />
           <div className="flex justify-between mt-1 align-between hover:text-[#242424]">
             <p>
-              Max Nunez Arquitectos: Concursos Públicos / UC / Santiago, Chile
+              Schwember Garcia-Huidobro Arquitectos: Concursos Públicos / UC / Santiago, Chile
             </p>
             <p className="ml-6">2015</p>
           </div>
           <hr className="col-span-6 w-full h-[1px] bg-[#adadad] border-0 rounded  mt-1" />
           <div className="flex justify-between mt-1 align-between hover:text-[#242424]">
             <p>
-              Max Nunez Arquitectos: Obra Reciente / Universidad de BA /
+              Schwember Garcia-Huidobro Arquitectos: Obra Reciente / Universidad de BA /
               Argentina
             </p>
             <p className="ml-6">2014</p>

@@ -10,15 +10,15 @@ const Contact = () => {
           <p>Zip 7510077</p>
         </div>
         <div className="mt-6">
-          <p>contacto@mnaa.cl</p>
+          <p>contacto@sgh.cl</p>
           <a
-            href="https://www.instagram.com/maxnunezarq/"
+            href="https://www.instagram.com/schwembergarciahuidobro/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center text-[#adadad] hover:text-[#242424]"
           >
             <FaInstagram className="text-lg mr-1" />
-            maxnunezarq
+            schwembergarciahuidobro
           </a>
         </div>
       </section>

@@ -203,7 +203,7 @@ const NavigationBar = () => {
             <div className="flex justify-end">
               <NavLink className="no-underline flex" to="/">
                 <h3 className="text-base uppercase hover:text-[#adadad]">
-                  Max Núñez Arquitectos
+                  Schwember Garcia-Huidobro Arquitectos
                 </h3>
               </NavLink>
             </div>
@@ -241,7 +241,7 @@ const NavigationBar = () => {
                 }}
               >
                 <h3 className="uppercase z-[300]">
-                  Max Núñez Arquitectos
+                  Schwember Garcia-Huidobro Arquitectos
                 </h3>
               </NavLink>
               {isMobileMenuOpen && (
