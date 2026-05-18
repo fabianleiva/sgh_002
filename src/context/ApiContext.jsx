@@ -8,13 +8,13 @@ const ApiProvider = ({ children }) => {
   const [news, setNews] = useState([]);
   const [publications, setPublications] = useState([]);
   const projectsApiUrl =
-    "https://new.mnaa.cl/wp/wp-json/wp/v2/projects?acf_format=standard&_fields=id,title,slug,acf&per_page=100";
+    "https://new.mnaa.cl/wp-json/wp/v2/projects?acf_format=standard&_fields=id,title,slug,acf&per_page=100";
 
   const newsApiUrl =
-    "https://new.mnaa.cl/wp/wp-json/wp/v2/news?acf_format=standard&_fields=id,acf&per_page=100";
+    "https://new.mnaa.cl/wp-json/wp/v2/news?acf_format=standard&_fields=id,acf&per_page=100";
 
   const publicationsApiUrl =
-    "https://new.mnaa.cl/wp/wp-json/wp/v2/publications?acf_format=standard&_fields=id,acf&per_page=100";
+    "https://new.mnaa.cl/wp-json/wp/v2/publications?acf_format=standard&_fields=id,acf&per_page=100";
 
   const getAllProjects = async () => {
     try {
