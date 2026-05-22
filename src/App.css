@@ -2,16 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "supreme-bold";
-  src: local("SupremeLLWeb-Bold"),
-    url("./fonts/lineto_fonts/SupremeLLSub-Bold.woff") format("opentype");
+/* Josefin Sans — bold variant (weight 600) */
+.font-\[supreme-bold\] {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
 }
 
-@font-face {
-  font-family: "supreme-book";
-  src: local("SupremeLLWeb-Book"),
-    url("./fonts/lineto_fonts/SupremeLLSub-Book.woff") format("opentype");
+/* Josefin Sans — book/light variant (weight 300) */
+.font-\[supreme-book\] {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
 }
 
 * {
@@ -29,7 +29,8 @@ html {
   text-align: center;
   color: #242424;
   min-width: 100%;
-  font-family: "supreme-bold";
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
 }
 
 a {
