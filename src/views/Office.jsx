@@ -5,7 +5,7 @@ const Office = () => {
       <section className="mb-20 grid grid-cols-1 lg:grid-cols-5 gap-3">
         <div className="flex uppercase text-left "></div>
         <div className="grid grid-cols-1 gap-3 lg:col-span-3">
-          <p className="text-left font-[supreme-book]">
+          <p className="text-left font-light">
             Schwember Garcia-Huidobro Arquitectos es una oficina de arquitectura ubicada en
             Santiago de Chile formada el año 2010. Ha desarrollando diversos
             proyectos públicos y privados tanto en Chile como en el extranjero.
@@ -34,7 +34,7 @@ const Office = () => {
           <div className="uppercase text-left col-span-1 mb-3">
             Reconocimientos
           </div>
-          <div className="flex flex-col space-y-1 justify-start text-left font-[supreme-book]">
+          <div className="flex flex-col space-y-1 justify-start text-left font-light">
             <p>
               2024 - Mies Crown Hall Americas Prize, Outstanding Project / Hogar
               Aleman
@@ -78,7 +78,7 @@ const Office = () => {
                 <div>
                   <p className="uppercase">Socio Fundador</p>{" "}
                   <p className="mb-3 uppercase">Max Nunez Bancalari</p>
-                  <p className="font-[supreme-book]">
+                  <p className="font-light">
                     Arquitecto y Magister en Arquitectura de la Universidad
                     Católica de Chile en el 2004. El Año 2010 obtuvo un MSc in
                     Advanced Architectural Design de la Universidad de Columbia,
@@ -110,7 +110,7 @@ const Office = () => {
                 <div>
                   <p className="uppercase">Socio</p>{" "}
                   <p className="mb-3 uppercase">Stefano Rolla</p>
-                  <p className="font-[supreme-book]">
+                  <p className="font-light">
                     Se graduó de Arquitecto en el Politécnico de Milán en el
                     2005, con una tesis desarrollada en conjunto con la
                     Universidad de Buenos Aires. Desde el año 2006 vive y
@@ -144,36 +144,36 @@ const Office = () => {
         <div className="grid grid-cols-1 gap-3 mb-40 lg:col-span-4">
           <div className="flex flex-col text-left col-span-2 lg:col-span-1">
             <p className="col-span-1 uppercase mb-1">Jefes de Proyecto</p>
-            <div className="flex flex-col md:flex-row font-[supreme-book] gap-1">
+            <div className="flex flex-col md:flex-row font-light gap-1">
               <p className="uppercase">Carlos Rosas </p>
               <p>/ Arquitecto Universidad Diego Portales</p>
             </div>
-            <div className="flex flex-col md:flex-row font-[supreme-book] gap-1">
+            <div className="flex flex-col md:flex-row font-light gap-1">
               <p className="uppercase">Fabián Leiva</p>
               <p>/ Arquitecto Universidad de Chile</p>
             </div>
           </div>
           <div className="flex flex-col text-left col-span-2 lg:col-span-1 mt-3">
             <p className="col-span-1 uppercase mb-1">Arquitectos</p>
-            <div className="flex flex-col md:flex-row font-[supreme-book] gap-1">
+            <div className="flex flex-col md:flex-row font-light gap-1">
               <p className="uppercase">Tomás Montero</p>
               <p>/ Arquitecto Universidad Diego Portales</p>
             </div>
           </div>
           <div className="flex flex-col text-left col-span-2 lg:col-span-1 mt-3">
             <p className="col-span-1 uppercase mb-1">Practicantes</p>
-            <div className="flex flex-col md:flex-row font-[supreme-book] gap-1">
+            <div className="flex flex-col md:flex-row font-light gap-1">
               <p className="uppercase">Emilia Henríquez</p>
               <p>/ Arquitecto Universidad de Chile</p>
             </div>
-            <div className="flex flex-col md:flex-row font-[supreme-book] gap-1">
+            <div className="flex flex-col md:flex-row font-light gap-1">
               <p className="uppercase">Ben Brinckmann</p>
               <p>/ Arquitecto Universidad de Mendrisio</p>
             </div>
           </div>
           <div className="flex flex-col text-left col-span-2 lg:col-span-1 mt-3">
             <p className="col-span-1 uppercase mb-1">Administración</p>
-            <div className="flex flex-col md:flex-row font-[supreme-book] gap-1">
+            <div className="flex flex-col md:flex-row font-light gap-1">
               <p className="uppercase">Isabel Muzzo</p>
               <p>/ Ingeniero Comercial Universidad de los Andes</p>
             </div>
@@ -182,7 +182,7 @@ const Office = () => {
       </div>
 
       {/* Créditos */}
-      <section className="flex col-span-3 lg:grid lg:grid-cols-5 mb-12 lg:mb-6 text-[#adadad] font-[supreme-book]">
+      <section className="flex col-span-3 lg:grid lg:grid-cols-5 mb-12 lg:mb-6 text-[#adadad] font-light">
         <div className="col-span-1 "></div>
         <div className="text-left col-span-4">
           <a

@@ -52,8 +52,8 @@ const AllProjectsList = () => {
             key={p.id}
             className={`grid grid-cols-3 cursor-pointer transition-colors duration-300 ${
               hoveredProjectId === p.id || openProjects.includes(p.id)
-                ? "font-[supreme-book] text-[#242424]"
-                : "font-[supreme-book] text-[#adadad]"
+                ? "font-light text-[#242424]"
+                : "font-light text-[#adadad]"
             }`}
           >
             <p className="col-span-2 lg:col-span-1 text-left py-1">
@@ -75,7 +75,7 @@ const AllProjectsList = () => {
               }`}
             >
               {openProjects.includes(p.id) && (
-                <div className="flex flex-col lg:flex-row justify-between w-full font-[supreme-book]">
+                <div className="flex flex-col lg:flex-row justify-between w-full font-light">
                   <div className="flex flex-col text-left py-6 h-full min-w-[30vw] lg:max-w-[30vw] mr-6 justify-between">
                     <div>
                       {isValidField(p.acf.architects) && (

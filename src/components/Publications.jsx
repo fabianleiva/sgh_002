@@ -34,8 +34,8 @@ const Publications = () => {
                 <p>
                   {item.acf.source} / {item.acf.country}
                 </p>
-                <p className="text-[#adadad] font-[supreme-book]">{item.acf.publication_title}</p>
-                <p className="text-[#adadad] font-[supreme-book]">{item.acf.publication_date}</p>
+                <p className="text-[#adadad] font-light">{item.acf.publication_title}</p>
+                <p className="text-[#adadad] font-light">{item.acf.publication_date}</p>
               </div>
             </div>
           </div>

@@ -11,7 +11,7 @@ const Conferences = () => {
       </div>
       <div className="mt-[20vh]  ">
         {/* Conferences */}
-        <div className="text-left pt-6 col-span-2 mb-40 text-[#adadad] font-[supreme-book]">
+        <div className="text-left pt-6 col-span-2 mb-40 text-[#adadad] font-light">
           <div className="flex justify-between mt-1 align-between hover:text-[#242424]">
             <p>Chile Day / Emerging Chilean Aarchitecture / AIA NY, EEUU</p>
             <p className="ml-6">2023</p>

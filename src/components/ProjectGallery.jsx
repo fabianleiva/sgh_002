@@ -185,11 +185,11 @@ const ProjectGallery = () => {
               }`}
               style={{ height: "80vh", zIndex: 9 }}
             >
-              <div className="w-full text-sm 2xl:text-base p-3 text-left md:col-span-1 font-[supreme-book]">
+              <div className="w-full text-sm 2xl:text-base p-3 text-left md:col-span-1 font-light">
                 {project.acf.summary}
               </div>
 
-              <div className="max-w-[45vw] lg:max-w-[35vw] xl:max-w-[25vw] ml-auto text-sm 2xl:text-base p-3 text-right md:col-span-1 font-[supreme-book]">
+              <div className="max-w-[45vw] lg:max-w-[35vw] xl:max-w-[25vw] ml-auto text-sm 2xl:text-base p-3 text-right md:col-span-1 font-light">
                 {projectDetails
                   .filter(({ value }) => value && value !== "-") // Filtra los valores "-" o vacíos
                   .map(({ label, value }) => (

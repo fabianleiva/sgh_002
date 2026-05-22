@@ -31,10 +31,10 @@ const NavigationBar = () => {
 
             {/* Nombre — izquierda */}
             <NavLink to="/" className="no-underline flex flex-col leading-tight">
-              <span className="font-[supreme-bold] text-[20px] tracking-[1px] text-[#262523] uppercase">
+              <span className="font-semibold text-[20px] tracking-[1px] text-[#262523] uppercase">
                 SCHWEMBER<br />GARCIA-HUIDOBRO
               </span>
-              <span className="font-[supreme-book] text-[20px] tracking-[1px] text-[#262523] uppercase">
+              <span className="font-light text-[20px] tracking-[1px] text-[#262523] uppercase">
                 ARQUITECTOS
               </span>
             </NavLink>
@@ -50,7 +50,7 @@ const NavigationBar = () => {
               >
                 <NavLink
                   to="/projects/selected"
-                  className={`${projectsColor} font-[supreme-bold] text-[18px] uppercase hover:text-[#262523] leading-tight`}
+                  className={`${projectsColor} font-semibold text-[18px] uppercase hover:text-[#262523] leading-tight`}
                 >
                   Proyectos
                 </NavLink>
@@ -58,13 +58,13 @@ const NavigationBar = () => {
                   <>
                     <NavLink
                       to="/projects/selected"
-                      className={`${selectedColor} font-[supreme-bold] text-[14px] hover:text-[#262523] leading-snug`}
+                      className={`${selectedColor} font-semibold text-[14px] hover:text-[#262523] leading-snug`}
                     >
                       Destacados
                     </NavLink>
                     <NavLink
                       to="/projects/all"
-                      className={`${archiveColor} font-[supreme-bold] text-[14px] hover:text-[#262523] leading-snug`}
+                      className={`${archiveColor} font-semibold text-[14px] hover:text-[#262523] leading-snug`}
                     >
                       Archivo
                     </NavLink>
@@ -75,7 +75,7 @@ const NavigationBar = () => {
               {/* Oficina */}
               <NavLink
                 to="/office"
-                className={`${officeColor} font-[supreme-bold] text-[18px] uppercase hover:text-[#262523] leading-tight`}
+                className={`${officeColor} font-semibold text-[18px] uppercase hover:text-[#262523] leading-tight`}
               >
                 Oficina
               </NavLink>
@@ -83,7 +83,7 @@ const NavigationBar = () => {
               {/* Contacto */}
               <NavLink
                 to="/contact"
-                className={`${contactColor} font-[supreme-bold] text-[18px] uppercase hover:text-[#262523] leading-tight`}
+                className={`${contactColor} font-semibold text-[18px] uppercase hover:text-[#262523] leading-tight`}
               >
                 Contacto
               </NavLink>
@@ -110,10 +110,10 @@ const NavigationBar = () => {
               className="no-underline flex flex-col items-end leading-tight"
               onClick={() => { if (isMobileMenuOpen) { setIsMobileMenuOpen(false); setMenuSection(null); } }}
             >
-              <span className="font-[supreme-bold] text-[14px] tracking-[1px] text-[#262523] uppercase z-[300]">
+              <span className="font-semibold text-[14px] tracking-[1px] text-[#262523] uppercase z-[300]">
                 SCHWEMBER GARCIA-HUIDOBRO
               </span>
-              <span className="font-[supreme-book] text-[14px] tracking-[1px] text-[#262523] uppercase z-[300]">
+              <span className="font-light text-[14px] tracking-[1px] text-[#262523] uppercase z-[300]">
                 ARQUITECTOS
               </span>
             </NavLink>
@@ -125,21 +125,21 @@ const NavigationBar = () => {
                   <>
                     <button
                       onClick={() => setMenuSection("projects")}
-                      className="text-[#262523] py-3 text-4xl text-left font-[supreme-bold]"
+                      className="text-[#262523] py-3 text-4xl text-left font-semibold"
                     >
                       Proyectos
                     </button>
                     <NavLink
                       to="/office"
                       onClick={() => { setIsMobileMenuOpen(false); setMenuSection(null); }}
-                      className="text-[#262523] py-3 text-4xl font-[supreme-bold]"
+                      className="text-[#262523] py-3 text-4xl font-semibold"
                     >
                       Oficina
                     </NavLink>
                     <NavLink
                       to="/contact"
                       onClick={() => { setIsMobileMenuOpen(false); setMenuSection(null); }}
-                      className="text-[#262523] py-3 text-4xl font-[supreme-bold]"
+                      className="text-[#262523] py-3 text-4xl font-semibold"
                     >
                       Contacto
                     </NavLink>
@@ -149,14 +149,14 @@ const NavigationBar = () => {
                   <>
                     <NavLink
                       to="/projects/selected"
-                      className="text-[#262523] py-3 text-4xl font-[supreme-bold]"
+                      className="text-[#262523] py-3 text-4xl font-semibold"
                       onClick={() => { setMenuSection(null); setIsMobileMenuOpen(false); }}
                     >
                       Destacados
                     </NavLink>
                     <NavLink
                       to="/projects/all"
-                      className="text-[#262523] py-3 text-4xl font-[supreme-bold]"
+                      className="text-[#262523] py-3 text-4xl font-semibold"
                       onClick={() => { setMenuSection(null); setIsMobileMenuOpen(false); }}
                     >
                       Archivo

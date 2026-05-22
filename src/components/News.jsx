@@ -31,8 +31,8 @@ const News = () => {
             </div>
             <div className="flex flex-col mt-2 text-left flex-shrink-0">
               <p className="uppercase">{item.acf.source}</p>
-              <p className="text-[#adadad] font-[supreme-book]">{item.acf.title}</p>
-              <p className="text-[#adadad] font-[supreme-book]">{item.acf.date}</p>
+              <p className="text-[#adadad] font-light">{item.acf.title}</p>
+              <p className="text-[#adadad] font-light">{item.acf.date}</p>
             </div>
           </div>
         ))}

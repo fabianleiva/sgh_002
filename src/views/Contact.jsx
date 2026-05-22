@@ -2,7 +2,7 @@ import { FaInstagram } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <main className="absolute inset-0 flex items-center justify-center overflow-hidden px-3 tracking-wider uppercase font-[supreme-book] ">
+    <main className="absolute inset-0 flex items-center justify-center overflow-hidden px-3 tracking-wider uppercase font-light ">
       <section className="text-left">
         <div>
           <p>Andres de Fuenzalida 17, oficina 52</p>
