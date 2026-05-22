@@ -131,11 +131,13 @@ const AllProjectsList = () => {
                         </button>
                       )}
                     </div>
-                    <img
-                      src={p.acf.cover}
-                      alt={p.acf.project_title}
-                      className="py-6 max-w-[50vw] max-h-[30vh] lg:max-h-[50vh]"
-                    />
+                    {p.acf.cover && (
+                      <img
+                        src={p.acf.cover}
+                        alt={p.acf.project_title}
+                        className="py-6 max-w-[50vw] max-h-[30vh] lg:max-h-[50vh]"
+                      />
+                    )}
                   </div>
                 </div>
               )}

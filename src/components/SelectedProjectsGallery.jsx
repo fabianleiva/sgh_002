@@ -10,6 +10,7 @@ const FeaturedGallery = () => {
     const index = projects.findIndex((e) => e.acf.project_id === projectId);
     if (index !== -1) {
       const project = projects[index];
+      if (!project.acf.cover) return null;
       const isHovered = hoveredImage === projectId;
 
       return (
