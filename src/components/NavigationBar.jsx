@@ -1,181 +1,170 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { HiOutlineBars2 } from "react-icons/hi2";
 import { IoCloseOutline } from "react-icons/io5";
 
 const NavigationBar = () => {
   const { pathname } = useLocation();
-
-  const [projectsState, setProjectsState] = useState("inactive");
-  const [officeState, setOfficeState] = useState("inactive");
-  const [contactState, setContactState] = useState("inactive");
   const [isProjectsHovered, setIsProjectsHovered] = useState(false);
-
-  // Mobile
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [menuSection, setMenuSection] = useState(null);
 
-  useEffect(() => {
-    setProjectsState(pathname.startsWith("/projects") ? "active" : "inactive");
-    setOfficeState(pathname === "/office" ? "active" : "inactive");
-    setContactState(pathname === "/contact" ? "active" : "inactive");
-  }, [pathname]);
+  const onProjectsPage = pathname.startsWith("/projects");
+  const showProjectsSub = onProjectsPage || isProjectsHovered;
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  const active = "text-[#262523]";
+  const inactive = "text-[#bebebe]";
+
+  const projectsColor  = onProjectsPage          ? active : inactive;
+  const officeColor    = pathname === "/office"   ? active : inactive;
+  const contactColor   = pathname === "/contact"  ? active : inactive;
+  const selectedColor  = pathname.startsWith("/projects/selected") ? active : inactive;
+  const archiveColor   = pathname === "/projects/all"              ? active : inactive;
 
   return (
     <>
       <header>
-        <nav className="fixed top-0 left-0 z-[100] p-3 w-full bg-[#fafafa] tracking-wider">
+        <nav className="fixed top-0 left-0 z-[100] w-full bg-[#fafafa] px-[25px] pt-[25px] pb-[20px]">
 
-          {/* Menu Desktop */}
-          <div
-            id="navbar_desktop"
-            className="hidden lg:grid grid-cols-[2fr_1fr_2fr] gap-5 items-start text-left"
-          >
-            {/* Columna 1: Links */}
-            <div className="flex uppercase">
+          {/* ── Desktop ── */}
+          <div className="hidden lg:flex items-start justify-between">
 
-              {/* Proyectos con hover dropdown */}
+            {/* Nombre — izquierda */}
+            <NavLink to="/" className="no-underline flex flex-col leading-tight">
+              <span className="font-[supreme-bold] text-[20px] tracking-[1px] text-[#262523] uppercase">
+                SCHWEMBER<br />GARCIA-HUIDOBRO
+              </span>
+              <span className="font-[supreme-book] text-[20px] tracking-[1px] text-[#262523] uppercase">
+                ARQUITECTOS
+              </span>
+            </NavLink>
+
+            {/* Links — derecha */}
+            <div className="flex gap-x-[18vw] items-start">
+
+              {/* Proyectos + submenú */}
               <div
-                className="relative"
+                className="flex flex-col"
                 onMouseEnter={() => setIsProjectsHovered(true)}
                 onMouseLeave={() => setIsProjectsHovered(false)}
               >
-                <NavLink className={projectsState} to="/projects/selected">
-                  <h3 className="hover:text-[#242424] mr-2">Proyectos,</h3>
+                <NavLink
+                  to="/projects/selected"
+                  className={`${projectsColor} font-[supreme-bold] text-[18px] uppercase hover:text-[#262523] leading-tight`}
+                >
+                  Proyectos
                 </NavLink>
-                {isProjectsHovered && (
-                  <div className="absolute top-full left-0 flex flex-col uppercase bg-[#fafafa] pt-1">
+                {showProjectsSub && (
+                  <>
                     <NavLink
-                      className="inactive hover:text-[#242424]"
                       to="/projects/selected"
+                      className={`${selectedColor} font-[supreme-bold] text-[14px] hover:text-[#262523] leading-snug`}
                     >
-                      <h3 className="mr-2 mb-1">Destacados,</h3>
+                      Destacados
                     </NavLink>
                     <NavLink
-                      className="inactive hover:text-[#242424]"
                       to="/projects/all"
+                      className={`${archiveColor} font-[supreme-bold] text-[14px] hover:text-[#262523] leading-snug`}
                     >
-                      <h3>Archivo</h3>
+                      Archivo
                     </NavLink>
-                  </div>
+                  </>
                 )}
               </div>
 
-              <NavLink className={officeState} to="/office">
-                <h3 className="hover:text-[#242424] mr-2">Oficina,</h3>
+              {/* Oficina */}
+              <NavLink
+                to="/office"
+                className={`${officeColor} font-[supreme-bold] text-[18px] uppercase hover:text-[#262523] leading-tight`}
+              >
+                Oficina
               </NavLink>
 
-              <NavLink className={contactState} to="/contact">
-                <h3 className="hover:text-[#242424]">Contacto</h3>
-              </NavLink>
-            </div>
-
-            {/* Columna 2: Vacía */}
-            <div></div>
-
-            {/* Columna 3: Nombre */}
-            <div className="flex justify-end">
-              <NavLink className="no-underline flex" to="/">
-                <h3 className="text-base uppercase hover:text-[#adadad]">
-                  Schwember Garcia-Huidobro Arquitectos
-                </h3>
+              {/* Contacto */}
+              <NavLink
+                to="/contact"
+                className={`${contactColor} font-[supreme-bold] text-[18px] uppercase hover:text-[#262523] leading-tight`}
+              >
+                Contacto
               </NavLink>
             </div>
           </div>
 
-          {/* Menu Mobile */}
-          <div id="navbar_mobile" className="lg:hidden flex justify-between">
+          {/* ── Mobile ── */}
+          <div className="lg:hidden flex justify-between items-start">
 
             {/* Hamburguesa */}
-            <div className="flex justify-start z-[400] relative">
-              <button
-                onClick={toggleMobileMenu}
-                className="text-[#242424]"
-                aria-label="Toggle menu"
-              >
-                {isMobileMenuOpen ? (
-                  <IoCloseOutline className="text-2xl z-[300]" />
-                ) : (
-                  <HiOutlineBars2 className="text-2xl z-[300]" />
-                )}
-              </button>
-            </div>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-[#262523] z-[400] relative"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen
+                ? <IoCloseOutline className="text-2xl" />
+                : <HiOutlineBars2 className="text-2xl" />}
+            </button>
 
             {/* Nombre */}
-            <div className="flex justify-end">
-              <NavLink
-                className="no-underline flex"
-                to="/"
-                onClick={() => {
-                  if (isMobileMenuOpen) {
-                    toggleMobileMenu();
-                    setMenuSection(null);
-                  }
-                }}
-              >
-                <h3 className="uppercase z-[300]">
-                  Schwember Garcia-Huidobro Arquitectos
-                </h3>
-              </NavLink>
+            <NavLink
+              to="/"
+              className="no-underline flex flex-col items-end leading-tight"
+              onClick={() => { if (isMobileMenuOpen) { setIsMobileMenuOpen(false); setMenuSection(null); } }}
+            >
+              <span className="font-[supreme-bold] text-[14px] tracking-[1px] text-[#262523] uppercase z-[300]">
+                SCHWEMBER GARCIA-HUIDOBRO
+              </span>
+              <span className="font-[supreme-book] text-[14px] tracking-[1px] text-[#262523] uppercase z-[300]">
+                ARQUITECTOS
+              </span>
+            </NavLink>
 
-              {isMobileMenuOpen && (
-                <div className="absolute left-0 top-0 w-full bg-[#fafafa] z-[100]">
-                  <div className="flex flex-col uppercase justify-center h-[100vh]">
-
-                    {/* Menú principal */}
-                    {!menuSection && (
-                      <>
-                        <NavLink
-                          onClick={() => setMenuSection("projects")}
-                          className="text-[#242424] p-3 text-4xl"
-                        >
-                          Proyectos
-                        </NavLink>
-                        <NavLink
-                          to="/office"
-                          onClick={() => { toggleMobileMenu(); setMenuSection(null); }}
-                          className="text-[#242424] p-3 text-4xl"
-                        >
-                          Oficina
-                        </NavLink>
-                        <NavLink
-                          to="/contact"
-                          onClick={() => { toggleMobileMenu(); setMenuSection(null); }}
-                          className="text-[#242424] p-3 text-4xl"
-                        >
-                          Contacto
-                        </NavLink>
-                      </>
-                    )}
-
-                    {/* Submenú Proyectos */}
-                    {menuSection === "projects" && (
-                      <>
-                        <NavLink
-                          to="/projects/selected"
-                          className="text-[#242424] p-3 text-4xl"
-                          onClick={() => { setMenuSection(null); toggleMobileMenu(); }}
-                        >
-                          Destacados
-                        </NavLink>
-                        <NavLink
-                          to="/projects/all"
-                          className="text-[#242424] p-3 text-4xl"
-                          onClick={() => { setMenuSection(null); toggleMobileMenu(); }}
-                        >
-                          Archivo
-                        </NavLink>
-                      </>
-                    )}
-
-                  </div>
-                </div>
-              )}
-            </div>
+            {/* Menú móvil desplegable */}
+            {isMobileMenuOpen && (
+              <div className="absolute left-0 top-0 w-full h-[100vh] bg-[#fafafa] z-[100] flex flex-col uppercase justify-center px-[25px]">
+                {!menuSection && (
+                  <>
+                    <button
+                      onClick={() => setMenuSection("projects")}
+                      className="text-[#262523] py-3 text-4xl text-left font-[supreme-bold]"
+                    >
+                      Proyectos
+                    </button>
+                    <NavLink
+                      to="/office"
+                      onClick={() => { setIsMobileMenuOpen(false); setMenuSection(null); }}
+                      className="text-[#262523] py-3 text-4xl font-[supreme-bold]"
+                    >
+                      Oficina
+                    </NavLink>
+                    <NavLink
+                      to="/contact"
+                      onClick={() => { setIsMobileMenuOpen(false); setMenuSection(null); }}
+                      className="text-[#262523] py-3 text-4xl font-[supreme-bold]"
+                    >
+                      Contacto
+                    </NavLink>
+                  </>
+                )}
+                {menuSection === "projects" && (
+                  <>
+                    <NavLink
+                      to="/projects/selected"
+                      className="text-[#262523] py-3 text-4xl font-[supreme-bold]"
+                      onClick={() => { setMenuSection(null); setIsMobileMenuOpen(false); }}
+                    >
+                      Destacados
+                    </NavLink>
+                    <NavLink
+                      to="/projects/all"
+                      className="text-[#262523] py-3 text-4xl font-[supreme-bold]"
+                      onClick={() => { setMenuSection(null); setIsMobileMenuOpen(false); }}
+                    >
+                      Archivo
+                    </NavLink>
+                  </>
+                )}
+              </div>
+            )}
           </div>
 
         </nav>
