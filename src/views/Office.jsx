@@ -1,5 +1,8 @@
+import FadeIn from "../components/FadeIn.jsx";
+
 const Office = () => {
   return (
+    <FadeIn>
     <main className="mt-[20vh] px-[25px] tracking-wider">
 
       {/* ── Intro: descripción + socios + foto ── ocupa exactamente 100vh ── */}
@@ -192,6 +195,7 @@ const Office = () => {
       </section>
 
     </main>
+    </FadeIn>
   );
 };
 

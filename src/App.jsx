@@ -1,5 +1,7 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
+import Loader from "./components/Loader";
 import Landing from "./views/Landing";
 import SelectedProjects from "./views/SelectedProjects";
 import AllProjects from "./views/AllProjects";
@@ -12,8 +14,18 @@ import "./App.css";
 import "animate.css";
 
 function App() {
+  const [appReady, setAppReady] = useState(() => {
+    return sessionStorage.getItem("sgh-loaded") === "true";
+  });
+
+  const handleLoaderDone = () => {
+    sessionStorage.setItem("sgh-loaded", "true");
+    setAppReady(true);
+  };
+
   return (
     <>
+      {!appReady && <Loader onDone={handleLoaderDone} />}
       <NavigationBar />
       <Routes>
         <Route path="/" element={<Landing />} />

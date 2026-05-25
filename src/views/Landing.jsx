@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const images = [
   "https://api.sgharquitectos.cl/wp/wp-content/uploads/2026/05/SGH-Chicureo-12.webp",
@@ -10,6 +10,13 @@ const images = [
 
 const Landing = () => {
   const [current, setCurrent] = useState(0);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    // Fade-in al montar
+    const t = setTimeout(() => setVisible(true), 50);
+    return () => clearTimeout(t);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,7 +26,10 @@ const Landing = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen overflow-hidden flex items-center justify-center relative">
+    <div
+      className="w-full h-screen overflow-hidden flex items-center justify-center relative transition-opacity duration-[1200ms] ease-in"
+      style={{ opacity: visible ? 1 : 0 }}
+    >
       {images.map((src, i) => (
         <img
           key={src}
