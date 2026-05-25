@@ -41,7 +41,7 @@ const AllProjectsList = () => {
   );
 
   return (
-    <section className="mx-3 mt-12">
+    <section className="mx-[25px] mt-12">
       <div className="mb-32">
         <div className="h-6"></div>
         {visibleProjects.map((p) => (
