@@ -47,48 +47,51 @@ const FeaturedGallery = () => {
 
   return (
     <section className="flex flex-col tracking-wider">
-      <div className="flex flex-col md:grid grid-cols-[2fr_1fr_2fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
-        {renderProjects("25")}
-        {renderProjects("24")}
-        {renderProjects("23")}
-      </div>
-      <div className="flex flex-col md:grid grid-cols-[1fr_2fr_2fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
-        {renderProjects("22")}
-        {renderProjects("21")}
-        {renderProjects("20")}
-      </div>
-      <div className="flex flex-col md:grid grid-cols-[2fr_2fr_2fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
-        {renderProjects("19")}
-        {renderProjects("18")}
-        {renderProjects("17")}
-      </div>
-      <div className="flex flex-col md:grid grid-cols-[2fr_1fr_2fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
-        {renderProjects("16")}
-        {renderProjects("15")}
-        {renderProjects("14")}
-      </div>
-      <div className="flex flex-col md:grid grid-cols-[1fr_2fr_2fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
-        {renderProjects("13")}
-        {renderProjects("12")}
-        {renderProjects("11")}
-      </div>
-      <div className="flex flex-col md:grid grid-cols-[2fr_2fr_1fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
-        {renderProjects("10")}
-        {renderProjects("09")}
-        {renderProjects("08")}
-      </div>
-      <div className="flex flex-col md:grid grid-cols-[2fr_1fr_2fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
-        {renderProjects("07")}
-        {renderProjects("06")}
-        {renderProjects("05")}
-      </div>
-      <div className="flex flex-col md:grid grid-cols-[2fr_2fr_1fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
-        {renderProjects("04")}
-        {renderProjects("03")}
+      <div className="flex flex-col md:grid grid-cols-[1fr_1fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
+        {renderProjects("01")}
         {renderProjects("02")}
       </div>
-      <div className="flex flex-col md:grid grid-cols-[1fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
-        {renderProjects("01")}
+      <div className="flex flex-col md:grid grid-cols-[1fr_2fr_1fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
+        {renderProjects("03")}
+        {renderProjects("11")}
+        {renderProjects("31")}
+      </div>
+      <div className="flex flex-col md:grid grid-cols-[2fr_1fr_1fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
+        {renderProjects("07")}
+        {renderProjects("08")}
+        {renderProjects("09")}
+      </div>
+      <div className="flex flex-col md:grid grid-cols-[1fr_2fr_1fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
+        {renderProjects("05")}
+        {renderProjects("13")}
+        {renderProjects("12")}
+      </div>
+      <div className="flex flex-col md:grid grid-cols-[1fr_1fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
+        {renderProjects("21")}
+        {renderProjects("10")}
+      </div>
+      <div className="flex flex-col md:grid grid-cols-[1fr_2fr_1fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
+        {renderProjects("14")}
+        {renderProjects("06")}
+        {renderProjects("15")}
+      </div>
+      <div className="flex flex-col md:grid grid-cols-[1fr_1fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
+        {renderProjects("22")}
+        {renderProjects("04")}
+      </div>
+      <div className="flex flex-col md:grid grid-cols-[2fr_1fr_1fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
+        {renderProjects("16")}
+        {renderProjects("17")}
+        {renderProjects("18")}
+      </div>
+      <div className="flex flex-col md:grid grid-cols-[1fr_2fr_1fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
+        {renderProjects("19")}
+        {renderProjects("20")}
+        {renderProjects("23")}
+      </div>
+      <div className="flex flex-col md:grid grid-cols-[1fr_1fr] gap-3 mb-3 md:mb-20 2xl:mb-40">
+        {renderProjects("24")}
+        {renderProjects("25")}
       </div>
     </section>
   );

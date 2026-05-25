@@ -10,10 +10,13 @@ const NavigationBar = () => {
   const [menuSection, setMenuSection] = useState(null);
 
   const onProjectsPage = pathname.startsWith("/projects");
-  const showProjectsSub = onProjectsPage || isProjectsHovered;
+  const showProjectsSub = isProjectsHovered;
 
-  const active = "text-[#262523]";
-  const inactive = "text-[#bebebe]";
+  const isLanding = pathname === "/";
+
+  const active   = isLanding ? "text-[#e6e6e6]" : "text-[#262523]";
+  const inactive = isLanding ? "text-[#e6e6e6]" : "text-[#bebebe]";
+  const hover    = isLanding ? "hover:text-[#b0b0b0]" : "hover:text-[#262523]";
 
   const projectsColor  = onProjectsPage          ? active : inactive;
   const officeColor    = pathname === "/office"   ? active : inactive;
@@ -24,71 +27,93 @@ const NavigationBar = () => {
   return (
     <>
       <header>
-        <nav className="fixed top-0 left-0 z-[100] w-full bg-[#fafafa] px-[25px] pt-[25px] pb-[20px]">
+        <nav className={`fixed top-0 left-0 z-[100] w-full px-[25px] pt-[25px] pb-[20px] text-left ${pathname === "/" ? "bg-transparent" : "bg-[#fafafa]"}`}>
 
           {/* ── Desktop ── */}
-          <div className="hidden lg:flex items-start justify-between">
-
-            {/* Nombre — izquierda */}
-            <NavLink to="/" className="no-underline flex flex-col leading-tight">
-              <span className="font-semibold text-[20px] tracking-[1px] text-[#262523] uppercase">
-                SCHWEMBER<br />GARCIA-HUIDOBRO
-              </span>
-              <span className="font-light text-[20px] tracking-[1px] text-[#262523] uppercase">
-                ARQUITECTOS
-              </span>
-            </NavLink>
-
-            {/* Links — derecha */}
-            <div className="flex gap-x-[18vw] items-start">
-
-              {/* Proyectos + submenú */}
-              <div
-                className="flex flex-col"
-                onMouseEnter={() => setIsProjectsHovered(true)}
-                onMouseLeave={() => setIsProjectsHovered(false)}
-              >
-                <NavLink
-                  to="/projects/selected"
-                  className={`${projectsColor} font-semibold text-[18px] uppercase hover:text-[#262523] leading-tight`}
-                >
+          {isLanding ? (
+            /* Layout landing: nombre + links apilados a la izquierda */
+            <div className="hidden lg:flex flex-col items-start">
+              <NavLink to="/" className="no-underline flex flex-col leading-tight text-left mb-4">
+                <span className="font-semibold text-[20px] tracking-[1px] uppercase text-[#e6e6e6]">
+                  SCHWEMBER<br />GARCIA-HUIDOBRO
+                </span>
+                <span className="font-light text-[20px] tracking-[1px] uppercase text-[#e6e6e6]">
+                  ARQUITECTOS
+                </span>
+              </NavLink>
+              <div className="absolute top-[20vh] left-[25px] flex flex-col gap-2">
+                <NavLink to="/projects/selected" className={`${hover} font-semibold text-[18px] uppercase leading-tight text-[#e6e6e6]`}>
                   Proyectos
                 </NavLink>
-                {showProjectsSub && (
-                  <>
-                    <NavLink
-                      to="/projects/selected"
-                      className={`${selectedColor} font-semibold text-[14px] hover:text-[#262523] leading-snug`}
-                    >
-                      Destacados
-                    </NavLink>
-                    <NavLink
-                      to="/projects/all"
-                      className={`${archiveColor} font-semibold text-[14px] hover:text-[#262523] leading-snug`}
-                    >
-                      Archivo
-                    </NavLink>
-                  </>
-                )}
+                <NavLink to="/office" className={`${hover} font-semibold text-[18px] uppercase leading-tight text-[#e6e6e6]`}>Oficina</NavLink>
+                <NavLink to="/contact" className={`${hover} font-semibold text-[18px] uppercase leading-tight text-[#e6e6e6]`}>Contacto</NavLink>
               </div>
-
-              {/* Oficina */}
-              <NavLink
-                to="/office"
-                className={`${officeColor} font-semibold text-[18px] uppercase hover:text-[#262523] leading-tight`}
-              >
-                Oficina
-              </NavLink>
-
-              {/* Contacto */}
-              <NavLink
-                to="/contact"
-                className={`${contactColor} font-semibold text-[18px] uppercase hover:text-[#262523] leading-tight`}
-              >
-                Contacto
-              </NavLink>
             </div>
-          </div>
+          ) : (
+            /* Layout normal: nombre izquierda, links derecha */
+            <div className="hidden lg:grid lg:grid-cols-2 gap-3 items-start">
+
+              {/* Nombre — izquierda */}
+              <NavLink to="/" className="no-underline flex flex-col leading-tight text-left">
+                <span className="font-semibold text-[20px] tracking-[1px] uppercase text-[#262523]">
+                  SCHWEMBER<br />GARCIA-HUIDOBRO
+                </span>
+                <span className="font-light text-[20px] tracking-[1px] uppercase text-[#262523]">
+                  ARQUITECTOS
+                </span>
+              </NavLink>
+
+              {/* Links — derecha */}
+              <div className="flex justify-between items-start text-left">
+
+                {/* Proyectos + submenú */}
+                <div
+                  className="flex flex-col"
+                  onMouseEnter={() => setIsProjectsHovered(true)}
+                  onMouseLeave={() => setIsProjectsHovered(false)}
+                >
+                  <NavLink
+                    to="/projects/selected"
+                    className={`${projectsColor} ${hover} font-semibold text-[18px] uppercase leading-tight`}
+                  >
+                    Proyectos
+                  </NavLink>
+                  {showProjectsSub && (
+                    <>
+                      <NavLink
+                        to="/projects/selected"
+                        className={`${selectedColor} ${hover} font-semibold text-[14px] leading-snug`}
+                      >
+                        Destacados
+                      </NavLink>
+                      <NavLink
+                        to="/projects/all"
+                        className={`${archiveColor} ${hover} font-semibold text-[14px] leading-snug`}
+                      >
+                        Archivo
+                      </NavLink>
+                    </>
+                  )}
+                </div>
+
+                {/* Oficina */}
+                <NavLink
+                  to="/office"
+                  className={`${officeColor} ${hover} font-semibold text-[18px] uppercase leading-tight`}
+                >
+                  Oficina
+                </NavLink>
+
+                {/* Contacto */}
+                <NavLink
+                  to="/contact"
+                  className={`${contactColor} ${hover} font-semibold text-[18px] uppercase leading-tight`}
+                >
+                  Contacto
+                </NavLink>
+              </div>
+            </div>
+          )}
 
           {/* ── Mobile ── */}
           <div className="lg:hidden flex justify-between items-start">

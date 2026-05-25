@@ -1,5 +1,6 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
+import Landing from "./views/Landing";
 import SelectedProjects from "./views/SelectedProjects";
 import AllProjects from "./views/AllProjects";
 import ProjectGallery from "./components/ProjectGallery";
@@ -15,10 +16,7 @@ function App() {
     <>
       <NavigationBar />
       <Routes>
-        <Route
-          path="/"
-          element={<Navigate to="/projects/selected" replace />}
-        />
+        <Route path="/" element={<Landing />} />
         <Route path="/projects/selected" element={<SelectedProjects />} />
         <Route path="/projects/all" element={<AllProjects />} />
         <Route
