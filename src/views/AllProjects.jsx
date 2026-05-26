@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { ApiContext } from "../context/ApiContext";
 import { useNavigate } from "react-router-dom";
+import { HiChevronUp, HiChevronDown } from "react-icons/hi2";
 import AllProjectsList from "../components/AllProjectsList.jsx";
 import FadeIn from "../components/FadeIn.jsx";
 
@@ -10,6 +11,17 @@ const AllProjects = () => {
   const [shownCover, setShownCover] = useState(null);
   const [shownProject, setShownProject] = useState(null);
   const [mobileOverlay, setMobileOverlay] = useState(null);
+  const [sortField, setSortField] = useState("year");
+  const [sortOrder, setSortOrder] = useState("desc");
+
+  const handleSort = (field) => {
+    if (field === sortField) {
+      setSortOrder(o => o === "desc" ? "asc" : "desc");
+    } else {
+      setSortField(field);
+      setSortOrder("desc");
+    }
+  };
 
   const defaultProject = projects.find((p) =>
     p.acf.project_title?.toLowerCase().includes("muros")
@@ -56,9 +68,19 @@ const AllProjects = () => {
               <p className="text-left">Proyecto</p>
               <p className="text-left hidden lg:block">Lugar</p>
               <div className="flex justify-end lg:grid lg:grid-cols-3">
-                <p className="text-left hidden lg:block">Superficie</p>
-                <p className="text-left hidden lg:block">Tipología</p>
-                <p className="text-right">Año</p>
+                <p
+                  className="text-left hidden lg:block cursor-pointer hover:text-[#adadad] select-none"
+                  onClick={() => handleSort("surface")}
+                >
+                  M² {sortField === "surface" && (sortOrder === "desc" ? <HiChevronDown className="inline text-[11px]" /> : <HiChevronUp className="inline text-[11px]" />)}
+                </p>
+                <p className="text-left hidden lg:block">Tipo</p>
+                <p
+                  className="text-right cursor-pointer hover:text-[#adadad] select-none"
+                  onClick={() => handleSort("year")}
+                >
+                  Año {sortField === "year" && (sortOrder === "desc" ? <HiChevronDown className="inline text-[11px]" /> : <HiChevronUp className="inline text-[11px]" />)}
+                </p>
               </div>
             </div>
             <hr className="h-[1px] bg-[#adadad] border-0 rounded" />
@@ -68,6 +90,8 @@ const AllProjects = () => {
             onHoverProject={handleHover}
             activeProject={shownProject}
             onProjectClick={handleProjectClick}
+            sortField={sortField}
+            sortOrder={sortOrder}
           />
         </div>
 
@@ -80,9 +104,9 @@ const AllProjects = () => {
             {isDestacado && (
               <span
                 onClick={() => navigate(`/projects/selected/${shownProject.slug}`)}
-                className="text-[#242424] hover:text-[#bebebe] font-semibold text-[18px] uppercase tracking-[1px] transition-colors duration-200 cursor-pointer"
+                className="text-[#242424] hover:text-[#bebebe] font-semibold text-[18px] capitalize tracking-[1px] cursor-pointer"
               >
-                VER PROYECTO &gt;&gt;
+                Ver Proyecto &gt;
               </span>
             )}
           </div>
@@ -112,7 +136,7 @@ const AllProjects = () => {
                 navigate(`/projects/selected/${mobileOverlay.slug}`);
               }}
             >
-              VER PROYECTO &gt;&gt;
+              Ver Proyecto &gt;
             </button>
           )}
         </div>
