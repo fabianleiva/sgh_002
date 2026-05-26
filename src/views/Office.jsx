@@ -142,7 +142,7 @@ const Office = () => {
       {/* ── Crédito web ── */}
       <section className="mb-12 text-left">
         <a
-          href="https://www.instagram.com/fffvbo/"
+          href="https://www.linkedin.com/in/fabian-leiva/"
           target="_blank"
           rel="noopener noreferrer"
           className="!text-[#adadad] hover:!text-[#adadad] !no-underline !font-light text-[14px] tracking-wider uppercase text-[11px]"
