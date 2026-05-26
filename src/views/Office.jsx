@@ -76,122 +76,79 @@ const Office = () => {
             Master of Science en diseño sustentable de la University College of
             London, UK.
           </p>
+
+          {/* Foto socios — mobile */}
+          <img
+            src="https://api.sgharquitectos.cl/wp/wp-content/uploads/2026/05/SGH-OFICINA2_WEB.webp"
+            alt="Álvaro Schwember y Fernando García-Huidobro"
+            className="w-full h-auto mt-6"
+          />
         </div>
       </section>
 
-      {/* ── Equipo ── */}
-      <section className="mb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-3">
+      {/* ── Equipo + Publicaciones / Premios ── */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-3 mb-20">
 
-          {/* Label */}
-          <div className="lg:col-span-4 mb-1">
-            <p className="uppercase font-semibold text-[16px] text-left">
-              Equipo 2026
-            </p>
-          </div>
+        {/* Col izquierda: Equipo + Premios */}
+        <div className="flex flex-col gap-8">
 
-          {/* Jefes de Proyecto */}
-          <div className="text-left">
-            <p className="font-semibold text-[16px]">Carlos Rosas</p>
-            <p className="font-light text-[14px]">
-              Arquitecto Universidad Diego Portales
-            </p>
-          </div>
-          <div className="text-left">
-            <p className="font-semibold text-[16px]">Fabián Leiva</p>
-            <p className="font-light text-[14px]">
-              Arquitecto Universidad de Chile
-            </p>
+          {/* Equipo */}
+          <div className="flex flex-col gap-3 text-left">
+            <p className="uppercase font-semibold text-[16px]">Equipo</p>
+            <div>
+              <p className="font-semibold text-[16px]">Sebastián Marín G.</p>
+              <p className="font-light text-[14px]">
+                Arquitecto Universidad del Desarrollo, Magister de Diseño y construcción sustentable UDD
+              </p>
+            </div>
           </div>
 
-          {/* Arquitectos */}
+          {/* Premios */}
           <div className="text-left">
-            <p className="font-semibold text-[16px]">Tomás Montero</p>
-            <p className="font-light text-[14px]">
-              Arquitecto Universidad Diego Portales
-            </p>
-          </div>
-
-          {/* Administración */}
-          <div className="text-left">
-            <p className="font-semibold text-[16px]">Isabel Muzzo</p>
-            <p className="font-light text-[14px]">
-              Ingeniero Comercial Universidad de los Andes
-            </p>
-          </div>
-
-          {/* Practicantes */}
-          <div className="text-left">
-            <p className="font-semibold text-[16px]">Emilia Henríquez</p>
-            <p className="font-light text-[14px]">
-              Arquitecto Universidad de Chile
-            </p>
-          </div>
-          <div className="text-left">
-            <p className="font-semibold text-[16px]">Ben Brinckmann</p>
-            <p className="font-light text-[14px]">
-              Arquitecto Universidad de Mendrisio
-            </p>
+            <p className="uppercase font-semibold text-[16px] mb-3">Premios</p>
+            <div className="flex flex-col gap-1 font-light text-[14px]">
+              <p>2019 — German Design Award Special / Casa sobre las Rocas</p>
+            </div>
           </div>
 
         </div>
-      </section>
 
-      {/* ── Publicaciones + Premios ── */}
-      <section className="grid grid-cols-1 lg:grid-cols-4 gap-3 mb-20">
-
-        {/* Publicaciones — cols 1-2 */}
-        <div className="lg:col-span-2 text-left">
-          <p className="uppercase font-semibold text-[16px] mb-3">
-            Publicaciones
-          </p>
+        {/* Col derecha: Publicaciones */}
+        <div className="text-left">
+          <p className="uppercase font-semibold text-[16px] mb-3">Publicaciones</p>
           <div className="flex flex-col gap-1 font-light text-[14px]">
-            <p>
-              &quot;Schwember Garcia-Huidobro Arquitectos, Pista de Despegue&quot;
-              — Editorial Constructo, Chile, 2015
-            </p>
-            <p>
-              &quot;Max Núñez Arquitectos, Colección de Ideas&quot;
-              — Editorial ARQ, Chile, 2018
-            </p>
+            <p>&quot;Wood Architecture Today&quot; — David Andreu, Booq Publishing, 2019</p>
+            <a href="https://www.archdaily.cl/cl/892209/casa-sobre-las-rocas-schwember-garcia-huidobro-arquitectos" target="_blank" rel="noopener noreferrer" className="!text-[#242424] hover:!text-[#adadad] !no-underline !font-light">
+              Casa sobre las Rocas — ArchDaily, 2018
+            </a>
+            <a href="https://www.archdaily.cl/cl/990132/casa-los-lirios-schwember-garcia-huidobro-arquitectos" target="_blank" rel="noopener noreferrer" className="!text-[#242424] hover:!text-[#adadad] !no-underline !font-light">
+              Casa Los Lirios — ArchDaily, 2022
+            </a>
+            <a href="https://www.archdaily.cl/cl/998389/casa-muros-curvos-schwember-garcia-huidobro-arquitectos" target="_blank" rel="noopener noreferrer" className="!text-[#242424] hover:!text-[#adadad] !no-underline !font-light">
+              Casa Muros Curvos — ArchDaily, 2023
+            </a>
+            <a href="https://www.archdaily.cl/cl/1020011/casa-pelvin-schwember-garcia-huidobro-arquitectos" target="_blank" rel="noopener noreferrer" className="!text-[#242424] hover:!text-[#adadad] !no-underline !font-light">
+              Casa Pelvin — ArchDaily, 2024
+            </a>
+            <a href="https://www.archdaily.cl/cl/1025148/casa-namoncahue-schwember-garcia-huidobro-arquitectos" target="_blank" rel="noopener noreferrer" className="!text-[#242424] hover:!text-[#adadad] !no-underline !font-light">
+              Casa Namoncahue — ArchDaily, 2024
+            </a>
           </div>
         </div>
 
-        {/* Premios — cols 3-4 */}
-        <div className="lg:col-span-2 text-left">
-          <p className="uppercase font-semibold text-[16px] mb-3">Premios</p>
-          <div className="flex flex-col gap-1 font-light text-[14px]">
-            <p>2024 — Mies Crown Hall Americas Prize, Outstanding Project / Hogar Alemán</p>
-            <p>2023 — Archdaily Award Building of the Year / Casa de Vidrio</p>
-            <p>2022 — Mies Crown Hall Americas Prize, Nominación / Casa de Vidrio</p>
-            <p>2020 — Wallpaper Magazine Design Award</p>
-            <p>2018 — Wallpaper Magazine Award, Best New Private House / Casa Ghat</p>
-            <p>2018 — Wallpaper Magazine Design Award</p>
-            <p>2017 — Mies Crown Hall Americas Prize, Nominación / Casa Ghat</p>
-            <p>2017 — Architectural Record Magazine, Design Vanguard Award</p>
-            <p>2015 — Mies Crown Hall Americas Prize, Nominación / MAD Building</p>
-            <p>2013 — Wallpaper Magazine Design Award</p>
-            <p>2013 — Wallpaper Magazine Award, Best New Private House / Casa 10x10</p>
-          </div>
-        </div>
       </section>
 
-      {/* ── Línea separadora ── */}
-      <hr className="border-0 h-px bg-[#adadad] mb-6" />
 
       {/* ── Crédito web ── */}
-      <section className="grid grid-cols-1 lg:grid-cols-4 gap-3 mb-12 text-[#adadad] font-light text-[14px]">
-        <div className="lg:col-span-2" />
-        <div className="text-left lg:col-span-2">
-          <a
-            className="hover:text-[#242424]"
-            href="https://www.instagram.com/fffvbo/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Desarrollo web: Fabian Leiva
-          </a>
-        </div>
+      <section className="mb-12 text-left">
+        <a
+          href="https://www.instagram.com/fffvbo/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="!text-[#adadad] hover:!text-[#adadad] !no-underline !font-light text-[14px] tracking-wider uppercase text-[11px]"
+        >
+          DEV_BY: FL
+        </a>
       </section>
 
     </main>

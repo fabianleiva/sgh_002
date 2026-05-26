@@ -45,25 +45,24 @@ const FeaturedGallery = () => {
     return (
       <div
         key={project.id}
-        className="flex justify-center h-fit relative"
+        className="relative self-start"
         onMouseEnter={() => setHoveredImage(projectId)}
         onMouseLeave={() => setHoveredImage(null)}
       >
-        <Link
-          className="flex bg-[#fafafa] text-[#fafafa] hover:text-[#242424]"
-          to={`/projects/selected/${project.slug}`}
-        >
-          <div
-            className="transition-all duration-300 ease-in-out absolute z-[-10]"
-            style={{ top: isHovered ? "-1.7rem" : 0 }}
-          >
-            <span className="hidden md:block">{project.acf.project_title}</span>
-          </div>
+        <Link to={`/projects/selected/${project.slug}`} className="block">
           <img
-            className="w-full h-auto z-0"
+            className="w-full h-auto block"
             src={project.acf.cover}
             alt={project.slug}
           />
+          <div
+            className="absolute inset-0 flex items-center justify-center transition-opacity duration-300"
+            style={{ opacity: isHovered ? 1 : 0, backgroundColor: "rgba(250,250,250,0.5)" }}
+          >
+            <span className="text-[#242424] font-semibold text-[18px] tracking-[1px] uppercase text-center px-4">
+              {project.acf.project_title}
+            </span>
+          </div>
         </Link>
       </div>
     );

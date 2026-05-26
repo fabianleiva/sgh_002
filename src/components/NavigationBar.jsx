@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { HiOutlineBars2 } from "react-icons/hi2";
-import { IoCloseOutline } from "react-icons/io5";
+import { HiBars2 } from "react-icons/hi2";
+import { IoClose } from "react-icons/io5";
 
 const NavigationBar = () => {
   const { pathname } = useLocation();
@@ -34,12 +34,9 @@ const NavigationBar = () => {
             /* Layout landing: nombre + links apilados a la izquierda */
             <div className="hidden lg:flex flex-col items-start">
               <NavLink to="/" className="no-underline flex flex-col leading-tight text-left mb-4">
-                <span className="font-semibold text-[20px] tracking-[1px] uppercase text-[#e6e6e6]">
-                  SCHWEMBER<br />GARCIA-HUIDOBRO
-                </span>
-                <span className="font-light text-[20px] tracking-[1px] uppercase text-[#e6e6e6]">
-                  ARQUITECTOS
-                </span>
+                <span className="font-semibold text-[20px] tracking-[1px] uppercase text-[#e6e6e6]">SCHWEMBER</span>
+                <span className="font-semibold text-[20px] tracking-[1px] uppercase text-[#e6e6e6]">GARCIA-HUIDOBRO</span>
+                <span className="font-light text-[20px] tracking-[1px] uppercase text-[#e6e6e6]">ARQUITECTOS</span>
               </NavLink>
               <div className="absolute top-[20vh] left-[25px] flex flex-col gap-2">
                 <NavLink to="/projects/selected" className={`${hover} font-semibold text-[18px] uppercase leading-tight text-[#e6e6e6]`}>
@@ -55,12 +52,9 @@ const NavigationBar = () => {
 
               {/* Nombre — izquierda */}
               <NavLink to="/" className="no-underline flex flex-col leading-tight text-left">
-                <span className="font-semibold text-[20px] tracking-[1px] uppercase text-[#262523]">
-                  SCHWEMBER<br />GARCIA-HUIDOBRO
-                </span>
-                <span className="font-light text-[20px] tracking-[1px] uppercase text-[#262523]">
-                  ARQUITECTOS
-                </span>
+                <span className="font-semibold text-[20px] tracking-[1px] uppercase text-[#262523]">SCHWEMBER</span>
+                <span className="font-semibold text-[20px] tracking-[1px] uppercase text-[#262523]">GARCIA-HUIDOBRO</span>
+                <span className="font-light text-[20px] tracking-[1px] uppercase text-[#262523]">ARQUITECTOS</span>
               </NavLink>
 
               {/* Links — derecha */}
@@ -79,20 +73,20 @@ const NavigationBar = () => {
                     Proyectos
                   </NavLink>
                   {showProjectsSub && (
-                    <>
+                    <div className="flex flex-col gap-2 mt-2">
                       <NavLink
                         to="/projects/selected"
-                        className={`${selectedColor} ${hover} font-semibold text-[14px] leading-snug`}
+                        className={`${selectedColor} ${hover} font-semibold text-[14px] uppercase leading-snug`}
                       >
                         Destacados
                       </NavLink>
                       <NavLink
                         to="/projects/all"
-                        className={`${archiveColor} ${hover} font-semibold text-[14px] leading-snug`}
+                        className={`${archiveColor} ${hover} font-semibold text-[14px] uppercase leading-snug`}
                       >
                         Archivo
                       </NavLink>
-                    </>
+                    </div>
                   )}
                 </div>
 
@@ -118,39 +112,36 @@ const NavigationBar = () => {
           {/* ── Mobile ── */}
           <div className="lg:hidden flex justify-between items-start">
 
-            {/* Hamburguesa */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-[#262523] z-[400] relative"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen
-                ? <IoCloseOutline className="text-2xl" />
-                : <HiOutlineBars2 className="text-2xl" />}
-            </button>
-
             {/* Nombre */}
             <NavLink
               to="/"
-              className="no-underline flex flex-col items-end leading-tight"
+              className="no-underline flex flex-col items-start leading-tight"
               onClick={() => { if (isMobileMenuOpen) { setIsMobileMenuOpen(false); setMenuSection(null); } }}
             >
-              <span className="font-semibold text-[14px] tracking-[1px] text-[#262523] uppercase z-[300]">
-                SCHWEMBER GARCIA-HUIDOBRO
-              </span>
-              <span className="font-light text-[14px] tracking-[1px] text-[#262523] uppercase z-[300]">
-                ARQUITECTOS
-              </span>
+              <span className={`font-semibold text-[14px] tracking-[1px] ${isLanding && !isMobileMenuOpen ? "text-[#e6e6e6]" : "text-[#262523]"} uppercase z-[300]`}>SCHWEMBER</span>
+              <span className={`font-semibold text-[14px] tracking-[1px] ${isLanding && !isMobileMenuOpen ? "text-[#e6e6e6]" : "text-[#262523]"} uppercase z-[300]`}>GARCIA-HUIDOBRO</span>
+              <span className={`font-light text-[14px] tracking-[1px] ${isLanding && !isMobileMenuOpen ? "text-[#e6e6e6]" : "text-[#262523]"} uppercase z-[300]`}>ARQUITECTOS</span>
             </NavLink>
+
+            {/* Hamburguesa */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={`${isLanding && !isMobileMenuOpen ? "text-[#e6e6e6]" : "text-[#262523]"} z-[400] relative`}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen
+                ? <IoClose className="text-2xl" />
+                : <HiBars2 className="text-2xl" />}
+            </button>
 
             {/* Menú móvil desplegable */}
             {isMobileMenuOpen && (
-              <div className="absolute left-0 top-0 w-full h-[100vh] bg-[#fafafa] z-[100] flex flex-col uppercase justify-center px-[25px]">
+              <div className="absolute left-0 top-0 w-full h-[100vh] bg-[#fafafa] z-[100] flex flex-col items-center uppercase justify-center px-[25px] text-center">
                 {!menuSection && (
                   <>
                     <button
                       onClick={() => setMenuSection("projects")}
-                      className="text-[#262523] py-3 text-4xl text-left font-semibold"
+                      className="text-[#262523] py-3 text-4xl font-semibold uppercase"
                     >
                       Proyectos
                     </button>

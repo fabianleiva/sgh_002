@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["'Josefin Sans'", "sans-serif"],
+      },
       animation: {
         "infinite-scroll": "infinite-scroll 100s linear infinite",
       },
